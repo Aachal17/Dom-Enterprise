@@ -23,6 +23,57 @@ i{
 	size: 50px;
 }
 
+/*Preloader*/
+#loader {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  z-index: 1;
+  width: 150px;
+  height: 150px;
+  margin: -75px 0 0 -75px;
+  border: 16px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 16px solid #2fa5d4;
+  width: 120px;
+  height: 120px;
+  -webkit-animation: spin 1s linear infinite;
+  animation: spin 2s linear infinite;
+}
+
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Add animation to "page content" */
+.animate-bottom {
+  position: relative;
+  -webkit-animation-name: animatebottom;
+  -webkit-animation-duration: 1s;
+  animation-name: animatebottom;
+  animation-duration: 1s
+}
+
+@-webkit-keyframes animatebottom {
+  from { bottom:-100px; opacity:0 } 
+  to { bottom:0px; opacity:1 }
+}
+
+@keyframes animatebottom { 
+  from{ bottom:-100px; opacity:0 } 
+  to{ bottom:0; opacity:1 }
+}
+
+#myDiv {
+	display: none;
+}
+
 /*Navbar*/
 
 .nav{
@@ -47,19 +98,9 @@ i{
 	margin-bottom: 5%;
 }
 
-.post-slider h2{
-	margin-bottom: 0px;
-	margin-right: 5%;
-	padding: 0;
-	position: absolute;
-	left: 5%;
-}
-
-.slider-title{
+.post-slider h1{
+	margin: 55px 0 5px 0px;
 	text-align: center;
-	position: relative;
-	top: 55px;
-	padding-bottom: 5%;
 }
 
 .post-wrapper{
@@ -69,7 +110,6 @@ i{
 	overflow: hidden;
 	border-bottom: 1px solid #a0a0a0;
 	border-radius: 5px;
-	box-sizing: border-box;
 }
 
 .post{
@@ -123,7 +163,12 @@ i{
 	line-height: 28px;
 }
 
-@media (min-width: 450px){
+@media (max-width: 991px){
+	#about{
+		padding: 0px;
+		margin: 0px;
+		width: 100%;
+	}
 	.about p{
 		padding: 0;
 		margin: 0;
@@ -131,7 +176,12 @@ i{
 	}
 }
 
-@media (min-width: 450px){
+@media (max-width: 523px){
+	#about{
+		padding: 0px;
+		margin: 0px 0px 10px 0px;
+		width: 100%;
+	}
 	.about p{
 		padding: 0;
 		margin: 0;
@@ -147,7 +197,7 @@ i{
 	align-items: center;
 	flex-direction: column;
 	width: 90%;
-	margin-left: 5%;
+	margin: 5% auto;
 	border: 1px solid #a0a0a0;
 	border-radius: 10px;
 	box-sizing: border-box;
@@ -155,7 +205,6 @@ i{
 
 .contact-heading{
 	text-align: center;
-	font-weight: 500;
     padding-top: 10px;	
 	margin: 0 auto;
 }
@@ -230,7 +279,6 @@ i{
 .contactForm{
 	width: 45%;
 	padding: 20px 45px;
-	border-radius: 2px;
 }
 
 .contactForm hr{
@@ -277,21 +325,37 @@ i{
 
 @media (max-width: 991px){
 	.contact{
-		padding: 50px;
+		padding: 0px;
+		margin: 0px 0px 10px 0px;
 	}
 	.wrapper{
 		flex-direction: column;
 	}
 	.contactInfo{
-		margin-bottom: 40px;
-	}
-	.contactInfo, .contactForm{
+		position: relative;
+		margin-bottom: 20px;
 		width: 100%;
+	}
+	.contactForm{
+		width: 100%;
+		padding: 0px;
 	}
 }
 
-@media (max-width: 411px){
-	.contactInfo, .contactForm{
+@media (max-width: 523px){
+	.contact{
+		padding: 5px;
+		margin: 0px;
+		width: 100%;
+	}
+	.contact-heading{
+		padding: 0px;
+		margin: 0px;
+	}
+	.contactInfo{
+		padding: 0px;
+	}
+	.contactForm{
 		padding: 0px;
 		margin: 0px;
 	}
@@ -305,6 +369,8 @@ i{
 footer p{
 	color: #999;
 	line-height: 25px;
+	text-align: justify;
+	justify-content: center;
 }
 
 h3, h4{
@@ -376,7 +442,14 @@ h3, h4{
 	right: 14px;
 	padding: 7px;
 	border: none;
+	border-radius: 2px;
 	background: #ebb923;
+	transition: 0.2px;
+}
+
+.segment-three button:hover{
+	background: #dba800;
+	transition: 0.3s;
 }
 
 .segment-three button i{
