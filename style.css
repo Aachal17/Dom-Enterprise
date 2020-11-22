@@ -38,7 +38,7 @@ i{
   width: 120px;
   height: 120px;
   -webkit-animation: spin 1s linear infinite;
-  animation: spin 2s linear infinite;
+  animation: spin 1s linear infinite;
 }
 
 @-webkit-keyframes spin {
@@ -157,7 +157,6 @@ i{
 
 #about p{
 	text-align: justify;
-	letter-spacing: 0.5px;
 	padding: 10px 10px 20px 10px; 
 	font-size: 20px;
 	line-height: 28px;
@@ -170,9 +169,12 @@ i{
 		width: 100%;
 	}
 	.about p{
+		text-align: justify;
 		padding: 0;
 		margin: 0;
 		line-height: 15px;
+		font-size: 10px;
+		letter-spacing: normal;
 	}
 }
 
@@ -185,7 +187,10 @@ i{
 	.about p{
 		padding: 0;
 		margin: 0;
-		line-height: 5px;
+		line-height: 3px;
+		letter-spacing: normal;
+		font-size: 7px;
+		text-align: center;
 	}
 }
 
@@ -326,7 +331,7 @@ i{
 @media (max-width: 991px){
 	.contact{
 		padding: 0px;
-		margin: 0px 0px 10px 0px;
+		margin: 0px;
 	}
 	.wrapper{
 		flex-direction: column;
